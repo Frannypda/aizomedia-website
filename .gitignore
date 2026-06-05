@@ -11,3 +11,6 @@ next-env.d.ts
 
 # Videos de testimonios — se sirven desde YouTube
 /public/Brand/assets/Testimonios\ videos/**/*.mp4
+
+# Junction NTFS renombrado (artefacto del fix de deploy)
+/public/Brand/_assets_junction_temp
