@@ -395,6 +395,7 @@ nav.nav-hidden{transform:translateY(-100%)}
 .foot-brand p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7}
 .foot-brand a{color:rgba(255,255,255,.6);transition:color .2s}
 .foot-brand a:hover{color:#fff}
+.foot-ig{display:flex;align-items:center;gap:8px;font-size:14px;margin-top:4px}
 .foot-links{display:flex;flex-direction:column;gap:12px}
 .foot-links-title{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gl);margin-bottom:4px}
 .foot-links a{font-size:14px;color:rgba(255,255,255,.5);transition:color .2s}

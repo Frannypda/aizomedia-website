@@ -9,6 +9,20 @@ export default function Footer() {
             <p>
               <a href="mailto:aizomediaagency@gmail.com">aizomediaagency@gmail.com</a>
             </p>
+            <a
+              href="https://www.instagram.com/aizomedia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="foot-ig"
+              aria-label="Instagram de Aizomedia"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.1" fill="currentColor" strokeWidth="2"/>
+              </svg>
+              @aizomedia
+            </a>
           </div>
 
           <div className="foot-links">
