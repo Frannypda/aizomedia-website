@@ -1,5 +1,13 @@
 import Image from 'next/image'
 
+const mqLogos = [
+  { src: '/Brand/assets/Logos de clientes/La pinilla.png', alt: 'La Pinilla' },
+  { src: '/Brand/assets/Logos de clientes/Megaimmuno.png', alt: 'Megaimmuno' },
+  { src: '/Brand/assets/Logos de clientes/Animme Street couture.png', alt: 'Anime Street Couture' },
+  { src: '/Brand/assets/Logos de clientes/Little circus.png', alt: 'Little Cirkus' },
+]
+const mqDoubled = [...mqLogos, ...mqLogos, ...mqLogos, ...mqLogos]
+
 export default function Hero() {
   return (
     <section className="hero" id="top">
@@ -40,24 +48,18 @@ export default function Hero() {
             </div>
 
             <div className="hero-clients">
-              <p className="hero-clients-label">Con quienes hemos trabajado</p>
               <div className="hero-clients-logos">
                 <div className="logo-bubble">
-                  <Image src="/Brand/assets/Logos de clientes/Ecommerce 1.png" alt="Logo de cliente" width={38} height={38} />
+                  <Image src="/Brand/assets/Logos de clientes/La pinilla.png" alt="La Pinilla" width={38} height={38} />
                 </div>
                 <div className="logo-bubble">
-                  <Image src="/Brand/assets/Logos de clientes/Ecommerce 2.png" alt="Logo de cliente" width={38} height={38} />
+                  <Image src="/Brand/assets/Logos de clientes/Animme Street couture.png" alt="Anime Street Couture" width={38} height={38} />
                 </div>
                 <div className="logo-bubble">
-                  <Image src="/Brand/assets/Logos de clientes/Ecommerce  3.png" alt="Logo de cliente" width={38} height={38} />
-                </div>
-                <div className="logo-bubble">
-                  <Image src="/Brand/assets/Logos de clientes/Little circus.jpg" alt="Little Circus" width={38} height={38} />
-                </div>
-                <div className="logo-bubble">
-                  <Image src="/Brand/assets/Logos de clientes/LOGO COLOR.svg" alt="Logo de cliente" width={38} height={38} unoptimized />
+                  <Image src="/Brand/assets/Logos de clientes/Megaimmuno.png" alt="Megaimmuno" width={38} height={38} />
                 </div>
               </div>
+              <p className="hero-clients-label">+15 marcas han trabajado con nosotros</p>
             </div>
           </div>
 
@@ -106,6 +108,20 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      <div className="mq-section">
+        <p className="mq-title">Marcas que han confiado en nosotros</p>
+        <div className="mq-wrap">
+          <div className="mq-logos-track">
+            {mqDoubled.map((l, i) => (
+              <div className="mq-logo-item" key={i}>
+                <img src={l.src} alt={l.alt} className="mq-logo-img" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="scroll-ind">
         <div className="si-line" />
         <span className="si-text">Scroll</span>

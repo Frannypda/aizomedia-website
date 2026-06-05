@@ -124,11 +124,12 @@ nav.nav-hidden{transform:translateY(-100%)}
 .hero-sub{font-size:17px;color:rgba(255,255,255,.6);line-height:1.75;max-width:440px;margin-bottom:36px;animation:wup .7s .2s var(--ease) both}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;animation:wup .7s .35s var(--ease) both}
 /* logos en hero */
-.hero-clients{animation:wup .7s .5s var(--ease) both;padding-top:24px;border-top:1px solid rgba(255,255,255,.1)}
-.hero-clients-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px}
-.hero-clients-logos{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.logo-bubble{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:9px;transition:background .2s,border-color .2s}
-.logo-bubble:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.3)}
+.hero-clients{animation:wup .7s .5s var(--ease) both;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:14px}
+.hero-clients-label{font-size:11px;font-weight:600;letter-spacing:.03em;color:rgba(255,255,255,.45);margin:0}
+.hero-clients-logos{display:flex;align-items:center}
+.logo-bubble{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);border:2px solid rgba(10,26,53,.8);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:5px;transition:background .2s;margin-left:-10px;flex-shrink:0}
+.logo-bubble:first-child{margin-left:0}
+.logo-bubble:hover{background:rgba(255,255,255,.2)}
 .logo-bubble img{width:100%;height:100%;object-fit:contain;opacity:.9;transition:opacity .2s}
 .logo-bubble:hover img{opacity:1}
 /* hero right cards */
@@ -171,13 +172,15 @@ nav.nav-hidden{transform:translateY(-100%)}
 .hms-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
 .hms-sep{width:1px;background:rgba(255,255,255,.1);align-self:stretch;flex-shrink:0}
 
-/* ── MARQUEE ── */
-.mq-wrap{background:rgba(7,16,31,.95);padding:12px 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
-.mq-track{display:flex;animation:mqR 30s linear infinite;width:max-content}
-.mq-item{display:flex;align-items:center;gap:22px;padding:0 22px;white-space:nowrap}
-.mq-text{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4)}
-.mq-dot{width:4px;height:4px;background:var(--g);border-radius:50%;opacity:.8}
-@keyframes mqR{to{transform:translateX(-50%)}}
+/* ── MARQUEE LOGOS (dentro del hero) ── */
+.mq-section{border-top:1px solid rgba(255,255,255,.08);padding:36px 0 44px;margin-top:32px}
+.mq-title{text-align:center;font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.3);font-weight:400;margin-bottom:24px}
+.mq-wrap{max-width:860px;margin:0 auto;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 16%,#000 84%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 16%,#000 84%,transparent 100%)}
+.mq-logos-track{display:flex;align-items:center;animation:mqLogos 30s linear infinite;width:max-content}
+.mq-logo-item{display:flex;align-items:center;justify-content:center;padding:0 32px;flex-shrink:0}
+.mq-logo-img{height:56px;width:auto;max-width:180px;object-fit:contain;filter:grayscale(1) invert(1);mix-blend-mode:screen;opacity:.65;transition:opacity .3s}
+.mq-logo-item:hover .mq-logo-img{opacity:1}
+@keyframes mqLogos{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ── PROBLEMA — fondo blanco, acentos rojos ── */
 .sec-prob{padding:112px 0;background:var(--white);position:relative;overflow:hidden}
