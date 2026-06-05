@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import Image from 'next/image'
 
 export default function NavBar() {
   const [open, setOpen] = useState(false)
@@ -45,7 +44,7 @@ export default function NavBar() {
         <div className="w">
           <div className="nav-in">
             <a href="/" className="nav-logo">
-              <Image src="/Brand/assets/Logos/Aizomedia blanco.png" alt="Aizomedia" width={160} height={32} priority style={{ height: 32, width: 'auto' }} />
+              <img src="/Brand/assets/Logos/aizomedia..svg" alt="Aizomedia" style={{ height: '28px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
             </a>
             <ul className="nav-links">
               <li><a href="/#servicios">Servicios</a></li>
