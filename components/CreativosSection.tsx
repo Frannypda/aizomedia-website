@@ -7,16 +7,12 @@ type Card = { img: string; alt: string }
 
 const row1: Card[] = [
   { img: `${SUP}/anuncio-meta-ads-suplementacion-omega-3-epa-dha-capsulas-story.jpg`, alt: 'Anuncio Meta Ads suplementación Omega 3 EPA DHA cápsulas' },
-  { img: `${COS}/anuncio-meta-ads-cosmeticos-contorno-ojos-mirada-luminosa-story.jpg`, alt: 'Anuncio Meta Ads cosméticos contorno de ojos mirada luminosa' },
   { img: `${MOD}/anuncio-meta-ads-moda-chandal-anime-street-couture-edicion-limitada-story.jpg`, alt: 'Anuncio Meta Ads moda chándal Anime Street Couture edición limitada' },
   { img: `${COS}/anuncio-meta-ads-cosmeticos-perfume-mist-the-aura-story.jpg`, alt: 'Anuncio Meta Ads cosméticos perfume mist The Aura' },
   { img: `${SUP}/anuncio-meta-ads-suplementacion-ashwagandha-ksm66-productividad-story.jpg`, alt: 'Anuncio Meta Ads suplementación Ashwagandha KSM-66 productividad' },
-  { img: `${COS}/anuncio-meta-ads-cosmeticos-crema-facial-vegana-antiedad-story.jpg`, alt: 'Anuncio Meta Ads cosméticos crema facial vegana antiedad' },
   { img: `${MOD}/anuncio-meta-ads-moda-hoodie-anime-street-couture-streetwear-story.jpg`, alt: 'Anuncio Meta Ads moda hoodie Anime Street Couture streetwear' },
   { img: `${COS}/anuncio-meta-ads-cosmeticos-leche-limpiadora-piel-sensible-story.jpg`, alt: 'Anuncio Meta Ads cosméticos leche limpiadora piel sensible' },
-  { img: `${COS}/anuncio-meta-ads-cosmeticos-serum-facial-antiaging-story.jpg`, alt: 'Anuncio Meta Ads cosméticos sérum facial antiaging' },
   { img: `${COS}/anuncio-meta-ads-cosmeticos-hair-mist-hidratacion-capilar-story.jpg`, alt: 'Anuncio Meta Ads cosméticos hair mist hidratación capilar' },
-  { img: `${COS}/anuncio-meta-ads-cosmeticos-pack-protector-solar-spf50-story.jpg`, alt: 'Anuncio Meta Ads cosméticos pack protector solar SPF50' },
 ]
 
 const row2: Card[] = [...row1].reverse()
