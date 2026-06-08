@@ -31,8 +31,8 @@ export default function Home() {
       <ProblemSection />
       <div className="sdiv" />
       <ServicesSection />
-      <div className="sdiv" />
-      <CreativosSection />
+      {/* <div className="sdiv" /> */}
+      {/* <CreativosSection /> */}
       <div className="sdiv" />
       <WhyUsSection />
       <div className="sdiv" />
