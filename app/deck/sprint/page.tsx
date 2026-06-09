@@ -38,6 +38,11 @@ export default function SprintPage() {
         <div className="w">
           <div className="deck-hero-inner">
             <span className="tag tag-w" style={{ animation: 'wup .6s .05s var(--ease) both' }}>Sprint de Conversión Ecommerce</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap', marginBottom: '8px', animation: 'wup .6s .1s var(--ease) both' }}>
+              <span style={{ fontSize: '22px', color: 'rgba(255,255,255,.45)', textDecoration: 'line-through', fontFamily: "'Helvetica Neue',Helvetica,Arial,sans-serif", fontWeight: 700 }}>720 €</span>
+              <span style={{ fontSize: '13px', fontWeight: 700, background: '#e8a020', color: '#fff', padding: '5px 12px', borderRadius: '100px', letterSpacing: '.04em', textTransform: 'uppercase' }}>Oferta verano</span>
+              <span style={{ fontSize: '28px', fontWeight: 800, color: '#fff', fontFamily: "'Helvetica Neue',Helvetica,Arial,sans-serif' " }}>590 € + IVA</span>
+            </div>
             <h1>
               Tu funnel tiene 4 puntos<br />
               donde pierde ventas.<br />
@@ -169,6 +174,10 @@ export default function SprintPage() {
             <span className="tag tag-w" style={{ marginBottom: '24px' }}>Empieza hoy</span>
             <h2>Diagnóstico + implementación<br /><em>en 14 días exactos.</em></h2>
             <p style={{ color: '#fff' }}>Si no entregamos en 14 días, te devolvemos el 100%.</p>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', flexWrap: 'wrap', margin: '8px 0 4px' }}>
+              <span style={{ fontSize: '22px', color: 'rgba(255,255,255,.4)', textDecoration: 'line-through', fontFamily: "'Helvetica Neue',Helvetica,Arial,sans-serif", fontWeight: 700 }}>720 €</span>
+              <span style={{ fontSize: '13px', fontWeight: 700, background: '#e8a020', color: '#fff', padding: '5px 12px', borderRadius: '100px', letterSpacing: '.04em', textTransform: 'uppercase' }}>Oferta verano</span>
+            </div>
             <span className="deck-price-big">590 €</span>
             <span className="deck-price-period">+ IVA · Pago único · Sin permanencia</span>
             <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>

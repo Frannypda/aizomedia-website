@@ -61,9 +61,13 @@ export default function DeckHubPage() {
               Diagnóstico completo + implementación directa en 14 días. Los 4 puntos donde más ventas se pierden, arreglados en Shopify. No es un informe — son cambios reales en tu tienda.
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginTop: '24px', flexWrap: 'wrap' }}>
-              <div style={{ fontFamily: "'Helvetica Neue',Helvetica,Arial,sans-serif", fontSize: '44px', fontWeight: 800, color: 'var(--n)', letterSpacing: '-.04em', lineHeight: 1 }}>
-                590 <span style={{ fontSize: '20px', fontWeight: 500, color: 'var(--grey)', fontFamily: 'var(--font-inter),sans-serif' }}>€ + IVA</span>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px' }}>
+                <span style={{ fontFamily: "'Helvetica Neue',Helvetica,Arial,sans-serif", fontSize: '22px', fontWeight: 700, color: 'var(--grey)', textDecoration: 'line-through' }}>720 €</span>
+                <div style={{ fontFamily: "'Helvetica Neue',Helvetica,Arial,sans-serif", fontSize: '44px', fontWeight: 800, color: 'var(--n)', letterSpacing: '-.04em', lineHeight: 1 }}>
+                  590 <span style={{ fontSize: '20px', fontWeight: 500, color: 'var(--grey)', fontFamily: 'var(--font-inter),sans-serif' }}>€ + IVA</span>
+                </div>
               </div>
+              <span style={{ fontSize: '13px', fontWeight: 700, background: '#e8a020', color: '#fff', padding: '6px 14px', borderRadius: '100px', letterSpacing: '.04em', textTransform: 'uppercase' }}>Oferta verano</span>
               <span style={{ fontSize: '13px', color: 'var(--grey)', background: '#fff', border: '1px solid var(--line)', padding: '6px 14px', borderRadius: '100px', fontWeight: 600 }}>Pago único · Sin permanencia</span>
               <span style={{ fontSize: '13px', color: 'var(--gd)', background: 'var(--gp)', padding: '6px 14px', borderRadius: '100px', fontWeight: 700 }}>🛡️ Garantía: si no entregamos en 14 días, devolución total</span>
             </div>
