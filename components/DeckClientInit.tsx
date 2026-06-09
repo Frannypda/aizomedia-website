@@ -1,7 +1,9 @@
 'use client'
 import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function DeckClientInit() {
+  const pathname = usePathname()
   useEffect(() => {
     const sp = document.getElementById('sp')
     const updateProgress = () => {
@@ -55,7 +57,7 @@ export default function DeckClientInit() {
         el.removeEventListener('mouseleave', leave)
       })
     }
-  }, [])
+  }, [pathname])
 
   return null
 }
