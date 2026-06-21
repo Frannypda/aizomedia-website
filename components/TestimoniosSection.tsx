@@ -26,6 +26,36 @@ export default function TestimoniosSection() {
           <p>Founders de ecommerce que pasaron por el Sprint.</p>
         </div>
 
+        <a
+          href="https://www.youtube.com/shorts/YD8XVKIDe90"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="test-feat r"
+        >
+          <div className="test-feat-img-wrap">
+            <img
+              src="/Brand/assets/Testimonios videos/Testimonio Dzzero/portada.png"
+              alt="Testimonio Dzzero — ×20 en facturación en 2 meses"
+              className="test-feat-img"
+            />
+            <div className="test-feat-play">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+          <div className="test-feat-body">
+            <span className="tag tag-w">Resultado destacado</span>
+            <p className="test-feat-frase">
+              &ldquo;Al principio me pareció que era dinero. Al día de hoy me parece barato. Hemos multiplicado la facturación por 20 en solo 2 meses.&rdquo;
+            </p>
+            <div className="test-feat-meta">
+              <span className="test-feat-name">Dzzero</span>
+              <span className="test-feat-arrow">Ver testimonio completo →</span>
+            </div>
+          </div>
+        </a>
+
         <div className="test-grid">
           {testimonios.map((t, i) => (
             <div key={i} className={`tcard r r${i + 1}`}>
