@@ -87,16 +87,16 @@ export default function TestimoniosSection() {
             )}
           </div>
           <div className="test-feat-body">
-            <span className="tag tag-w">Resultado destacado</span>
             <div className="test-feat-stat">
               <span className="test-feat-stat-num">×20</span>
               <span className="test-feat-stat-label">en facturación en solo 2 meses</span>
             </div>
             <p className="test-feat-frase">
-              &ldquo;Al principio me pareció que era dinero. Al día de hoy me parece barato. Hemos multiplicado la facturación por 20 en solo 2 meses.&rdquo;
+              &ldquo;Al principio me pareció que era dinero. Al día de hoy me parece barato.&rdquo;
             </p>
             <div className="test-feat-meta">
-              <span className="test-feat-name">— Dzzero</span>
+              <span className="tag tag-w" style={{marginBottom:0,fontSize:'10px'}}>Resultado destacado</span>
+              <span className="test-feat-name">Dzzero</span>
             </div>
           </div>
         </div>
