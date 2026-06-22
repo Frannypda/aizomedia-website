@@ -600,6 +600,10 @@ nav.nav-hidden{transform:translateY(-100%)}
 .casos-head{text-align:center;margin-bottom:48px}
 .casos-head h2{font-size:clamp(26px,3.2vw,44px);color:var(--n);margin-bottom:12px}
 .casos-head p{font-size:17px;color:var(--grey);max-width:420px;margin:0 auto}
+.casos-tabs{display:flex;gap:8px;margin-bottom:28px}
+.casos-tab{padding:10px 24px;border-radius:100px;font-size:13px;font-weight:600;border:1px solid var(--line);background:transparent;color:var(--grey);cursor:pointer;transition:all .2s;font-family:var(--font-inter),sans-serif}
+.casos-tab:hover{border-color:var(--n);color:var(--n)}
+.casos-tab.active{background:var(--n);color:#fff;border-color:var(--n)}
 .casos-puntos{display:flex;align-items:center;gap:24px;margin-top:36px;padding:28px 32px;background:var(--gp);border-radius:16px}
 .caso-punto{flex:1}
 .caso-punto-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:100px;margin-bottom:10px}
