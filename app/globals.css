@@ -595,23 +595,37 @@ nav.nav-hidden{transform:translateY(-100%)}
 }
 @keyframes srvCardIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
 
-/* ── CASOS ── */
-.sec-casos{padding:80px 0;background:var(--white)}
-.casos-head{text-align:center;margin-bottom:48px}
-.casos-head h2{font-size:clamp(26px,3.2vw,44px);color:var(--n);margin-bottom:12px}
-.casos-head p{font-size:17px;color:var(--grey);max-width:420px;margin:0 auto}
-.casos-tabs{display:flex;gap:8px;margin-bottom:28px}
-.casos-tab{padding:10px 24px;border-radius:100px;font-size:13px;font-weight:600;border:1px solid var(--line);background:transparent;color:var(--grey);cursor:pointer;transition:all .2s;font-family:var(--font-inter),sans-serif}
-.casos-tab:hover{border-color:var(--n);color:var(--n)}
-.casos-tab.active{background:var(--n);color:#fff;border-color:var(--n)}
-.casos-puntos{display:flex;align-items:center;gap:24px;margin-top:36px;padding:28px 32px;background:var(--gp);border-radius:16px}
-.caso-punto{flex:1}
-.caso-punto-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:100px;margin-bottom:10px}
-.caso-tag-bad{background:var(--red-p);color:var(--red)}
-.caso-tag-good{background:rgba(62,125,94,.15);color:var(--g)}
-.caso-punto p{font-size:14px;color:var(--n);line-height:1.65}
-.caso-punto-arrow{font-size:24px;color:var(--gl);flex-shrink:0}
-@media(max-width:640px){.casos-puntos{flex-direction:column;gap:16px}.caso-punto-arrow{transform:rotate(90deg)}}
+/* ── CASOS DE ÉXITO ── */
+.sec-casos-est{padding:96px 0;background:var(--n);position:relative;overflow:hidden}
+.sec-casos-est::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.casos-est-head{text-align:center;margin-bottom:64px;position:relative;z-index:1}
+.casos-est-head h2{font-size:clamp(28px,3.5vw,48px);color:#fff;margin-bottom:14px}
+.casos-est-head p{font-size:17px;color:rgba(255,255,255,.45);max-width:360px;margin:0 auto}
+.casos-est-list{display:flex;flex-direction:column;gap:28px;position:relative;z-index:1;max-width:900px;margin:0 auto}
+.caso-est-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:20px;overflow:hidden;transition:border-color .2s,transform .25s var(--ease)}
+.caso-est-card:hover{border-color:rgba(255,255,255,.18);transform:translateY(-3px)}
+.caso-est-card>div:first-child,.caso-est-card>div:nth-child(2){display:block}
+.caso-est-card{display:grid;grid-template-columns:340px 1fr;grid-template-rows:auto auto}
+.caso-est-img-wrap{grid-row:1;position:relative;height:240px;overflow:hidden;background:#000}
+.caso-est-img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s var(--ease)}
+.caso-est-card:hover .caso-est-img{transform:scale(1.03)}
+.caso-est-img-overlay{position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,rgba(10,26,53,.6));pointer-events:none}
+.caso-est-body{grid-row:1;padding:36px 40px;display:flex;flex-direction:column;justify-content:center;gap:0}
+.caso-est-cat{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gl);margin-bottom:14px;display:block}
+.caso-est-titulo{font-size:clamp(18px,2vw,24px);font-weight:700;color:#fff;line-height:1.3;margin-bottom:16px}
+.caso-est-desc{font-size:14px;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:24px;flex:1}
+.caso-est-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.caso-est-tag{font-size:11px;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.5);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:4px 12px}
+.caso-est-cta{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--gl);background:none;border:none;cursor:pointer;padding:0;font-family:var(--font-inter),sans-serif;transition:opacity .2s;text-align:left}
+.caso-est-cta:hover{opacity:.7}
+.caso-est-slider{grid-column:1/-1;grid-row:2;padding:0 32px 32px}
+@media(max-width:860px){
+  .caso-est-card{grid-template-columns:1fr}
+  .caso-est-img-wrap{height:200px;grid-row:1}
+  .caso-est-body{grid-row:2;padding:24px}
+  .caso-est-img-overlay{background:linear-gradient(180deg,transparent 60%,rgba(10,26,53,.7))}
+  .caso-est-slider{padding:0 16px 24px}
+}
 
 /* ── STEPPER DOTS (mobile) ── */
 .srv-stepper,.cro-stepper{display:none;justify-content:center;gap:10px;margin-top:24px}

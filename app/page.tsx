@@ -9,8 +9,7 @@ import ServicesSection from '@/components/ServicesSection'
 import CreativosSection from '@/components/CreativosSection'
 import WhyUsSection from '@/components/WhyUsSection'
 import SprintSection from '@/components/SprintSection'
-import CROSection from '@/components/CROSection'
-import CasosSection from '@/components/CasosSection'
+import CasosEstudioSection from '@/components/CasosEstudioSection'
 import TestimoniosSection from '@/components/TestimoniosSection'
 import TeamSection from '@/components/TeamSection'
 import FAQSection from '@/components/FAQSection'
@@ -39,9 +38,7 @@ export default function Home() {
       <div className="sdiv" />
       <SprintSection />
       <div className="sdiv" />
-      <CROSection />
-      <div className="sdiv" />
-      <CasosSection />
+      <CasosEstudioSection />
       <div className="sdiv-l" />
       <TestimoniosSection />
       <div className="sdiv-l" />
