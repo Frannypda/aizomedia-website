@@ -10,6 +10,7 @@ import CreativosSection from '@/components/CreativosSection'
 import WhyUsSection from '@/components/WhyUsSection'
 import SprintSection from '@/components/SprintSection'
 import CROSection from '@/components/CROSection'
+import CasosSection from '@/components/CasosSection'
 import TestimoniosSection from '@/components/TestimoniosSection'
 import TeamSection from '@/components/TeamSection'
 import FAQSection from '@/components/FAQSection'
@@ -39,6 +40,8 @@ export default function Home() {
       <SprintSection />
       <div className="sdiv" />
       <CROSection />
+      <div className="sdiv" />
+      <CasosSection />
       <div className="sdiv-l" />
       <TestimoniosSection />
       <div className="sdiv-l" />

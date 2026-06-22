@@ -595,6 +595,20 @@ nav.nav-hidden{transform:translateY(-100%)}
 }
 @keyframes srvCardIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
 
+/* ── CASOS ── */
+.sec-casos{padding:80px 0;background:var(--white)}
+.casos-head{text-align:center;margin-bottom:48px}
+.casos-head h2{font-size:clamp(26px,3.2vw,44px);color:var(--n);margin-bottom:12px}
+.casos-head p{font-size:17px;color:var(--grey);max-width:420px;margin:0 auto}
+.casos-puntos{display:flex;align-items:center;gap:24px;margin-top:36px;padding:28px 32px;background:var(--gp);border-radius:16px}
+.caso-punto{flex:1}
+.caso-punto-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:100px;margin-bottom:10px}
+.caso-tag-bad{background:var(--red-p);color:var(--red)}
+.caso-tag-good{background:rgba(62,125,94,.15);color:var(--g)}
+.caso-punto p{font-size:14px;color:var(--n);line-height:1.65}
+.caso-punto-arrow{font-size:24px;color:var(--gl);flex-shrink:0}
+@media(max-width:640px){.casos-puntos{flex-direction:column;gap:16px}.caso-punto-arrow{transform:rotate(90deg)}}
+
 /* ── STEPPER DOTS (mobile) ── */
 .srv-stepper,.cro-stepper{display:none;justify-content:center;gap:10px;margin-top:24px}
 .stepper-dot{width:8px;height:8px;border-radius:50%;background:rgba(10,26,53,.18);border:none;cursor:pointer;padding:0;transition:background .2s,transform .2s var(--spring)}
