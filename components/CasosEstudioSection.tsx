@@ -26,10 +26,19 @@ const casos = [
 ]
 
 export default function CasosEstudioSection() {
-  const [open, setOpen] = useState<string | null>(null)
+  const [open, setOpen] = useState<string | null>('megaimmuno')
 
   return (
     <section className="sec-casos-est" id="casos">
+      {/* Preload slider images so they're cached before the accordion opens */}
+      <div style={{ display: 'none' }} aria-hidden>
+        {casos.map(c => (
+          <span key={c.id}>
+            <img src={c.sliderBefore} alt="" />
+            <img src={c.sliderAfter} alt="" />
+          </span>
+        ))}
+      </div>
       <div className="w">
         <div className="casos-est-head r">
           <span className="tag tag-w">Casos de éxito</span>
