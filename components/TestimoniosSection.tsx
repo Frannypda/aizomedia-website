@@ -8,7 +8,8 @@ const testimonios = [
     portada: '/Brand/assets/Testimonios videos/Testimonio Dzzero/portada.png',
     cliente: 'Dzzero',
     frase: '"Al principio me pareció que era dinero. Al día de hoy me parece barato. Hemos multiplicado la facturación por 20 en solo 2 meses."',
-    featured: true,
+    featured: false,
+    star: false,
   },
   {
     id: 'alfredo',
@@ -17,6 +18,7 @@ const testimonios = [
     cliente: 'Alfredo M.',
     frase: '"Nunca os van a defraudar. Día a día he crecido a su lado una verdadera barbaridad."',
     featured: false,
+    star: false,
   },
   {
     id: 'oscar',
@@ -24,7 +26,8 @@ const testimonios = [
     portada: `https://img.youtube.com/vi/JQVfjavjPGg/hqdefault.jpg`,
     cliente: 'Oscar C.',
     frase: '"Los resultados son tangibles. Son gente muy proactiva, con lo cual es fácil ir creciendo."',
-    featured: false,
+    featured: true,
+    star: true,
   },
   {
     id: 'javier',
@@ -33,6 +36,7 @@ const testimonios = [
     cliente: 'Javier C.',
     frase: '"Gracias a ellos hemos conseguido vídeos virales. Más clientes y más gente que confía en nosotros."',
     featured: false,
+    star: false,
   },
 ]
 
@@ -59,7 +63,7 @@ export default function TestimoniosSection() {
 
         <div className="test-carousel">
           {testimonios.map((t) => (
-            <div key={t.id} className={`tcar-card r${t.featured ? ' tcar-feat' : ''}`}>
+            <div key={t.id} className={`tcar-card r${t.star ? ' tcar-star' : ''}`}>
               <div className="tcar-video">
                 {playing[t.id] ? (
                   <iframe
@@ -83,9 +87,9 @@ export default function TestimoniosSection() {
                 )}
               </div>
               <div className="tcar-info">
-                {t.featured && (
+                {t.star && (
                   <span className="tag tag-w" style={{ fontSize: '10px', marginBottom: '10px' }}>
-                    Resultado destacado
+                    Destacado
                   </span>
                 )}
                 <p className="tcar-frase">{t.frase}</p>
