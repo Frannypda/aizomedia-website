@@ -284,10 +284,10 @@ nav.nav-hidden{transform:translateY(-100%)}
 .test-head{text-align:center;margin-bottom:52px;position:relative;z-index:1}
 .test-head h2{font-size:clamp(28px,3.5vw,48px);color:#fff;margin-bottom:14px}
 .test-head p{font-size:17px;color:rgba(255,255,255,.45);max-width:420px;margin:0 auto;line-height:1.7}
-.test-carousel{display:flex;overflow-x:auto;gap:16px;padding:8px 80px 36px;cursor:grab;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%)}
+.test-carousel{display:flex;overflow-x:auto;gap:18px;padding:8px 0 36px 80px;cursor:grab;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 88%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 88%,transparent 100%)}
 .test-carousel::-webkit-scrollbar{display:none}
 .test-carousel[data-dragging]{cursor:grabbing;scroll-snap-type:none}
-.tcar-card{flex:0 0 300px;scroll-snap-align:center;border-radius:18px;overflow:hidden;position:relative;transition:transform .25s var(--ease),opacity .2s;opacity:.72;flex-shrink:0}
+.tcar-card{flex:0 0 400px;scroll-snap-align:start;border-radius:18px;overflow:hidden;position:relative;transition:transform .25s var(--ease),opacity .2s;opacity:.72;flex-shrink:0}
 .tcar-card:hover{transform:scale(1.025);opacity:1}
 .tcar-star{opacity:1;box-shadow:0 0 0 2px rgba(62,125,94,.75),0 24px 64px rgba(62,125,94,.28)}
 .tcar-video{aspect-ratio:9/16;position:relative;background:#000;overflow:hidden}
