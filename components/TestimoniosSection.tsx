@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useRef, useCallback } from 'react'
 
 const testimonios = [
   {
@@ -7,7 +7,7 @@ const testimonios = [
     youtubeId: 'YD8XVKIDe90',
     portada: '/Brand/assets/Testimonios videos/Testimonio Dzzero/portada.png',
     cliente: 'Dzzero',
-    frase: '"Al principio me pareció que era dinero. Al día de hoy me parece barato. Hemos multiplicado la facturación por 20 en solo 2 meses."',
+    frase: '"Al principio me pareció que era dinero. Al día de hoy me parece barato. ×20 en 2 meses."',
     star: true,
   },
   {
@@ -46,7 +46,34 @@ function PlayIcon({ size = 20 }: { size?: number }) {
 
 export default function TestimoniosSection() {
   const [playing, setPlaying] = useState<Record<string, boolean>>({})
-  const play = (id: string) => setPlaying(prev => ({ ...prev, [id]: true }))
+  const trackRef = useRef<HTMLDivElement>(null)
+  const dragging = useRef(false)
+  const startX = useRef(0)
+  const scrollLeft = useRef(0)
+
+  const onMouseDown = useCallback((e: React.MouseEvent) => {
+    dragging.current = true
+    startX.current = e.pageX - (trackRef.current?.offsetLeft ?? 0)
+    scrollLeft.current = trackRef.current?.scrollLeft ?? 0
+    if (trackRef.current) trackRef.current.dataset.dragging = '1'
+  }, [])
+
+  const onMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!dragging.current || !trackRef.current) return
+    e.preventDefault()
+    const x = e.pageX - trackRef.current.offsetLeft
+    trackRef.current.scrollLeft = scrollLeft.current - (x - startX.current) * 1.4
+  }, [])
+
+  const stopDrag = useCallback(() => {
+    dragging.current = false
+    if (trackRef.current) delete trackRef.current.dataset.dragging
+  }, [])
+
+  const play = (id: string) => {
+    if (dragging.current) return
+    setPlaying(prev => ({ ...prev, [id]: true }))
+  }
 
   return (
     <section className="sec-test" id="resultados">
@@ -56,42 +83,48 @@ export default function TestimoniosSection() {
           <h2>Lo que dicen los que ya lo han probado.</h2>
           <p>Founders de ecommerce que pasaron por el Sprint.</p>
         </div>
+      </div>
 
-        <div className="test-carousel">
-          {testimonios.map((t) => (
-            <div key={t.id} className={`tcar-card r${t.star ? ' tcar-star' : ''}`}>
-              <div className="tcar-video">
-                {playing[t.id] ? (
-                  <iframe
-                    src={`https://www.youtube.com/embed/${t.youtubeId}?autoplay=1`}
-                    title={`Testimonio de ${t.cliente}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ width: '100%', height: '100%', border: 'none' }}
-                  />
-                ) : (
-                  <button
-                    className="tcar-thumb"
-                    onClick={() => play(t.id)}
-                    aria-label={`Ver testimonio de ${t.cliente}`}
-                  >
-                    <img src={t.portada} alt={`Testimonio de ${t.cliente}`} />
-                    <div className="tcar-play">
-                      <PlayIcon size={22} />
+      <div
+        className="test-carousel"
+        ref={trackRef}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={stopDrag}
+        onMouseLeave={stopDrag}
+      >
+        {testimonios.map((t) => (
+          <div key={t.id} className={`tcar-card${t.star ? ' tcar-star' : ''}`}>
+            <div className="tcar-video">
+              {playing[t.id] ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${t.youtubeId}?autoplay=1`}
+                  title={`Testimonio de ${t.cliente}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ width: '100%', height: '100%', border: 'none', position: 'absolute', inset: 0 }}
+                />
+              ) : (
+                <button
+                  className="tcar-thumb"
+                  onClick={() => play(t.id)}
+                  aria-label={`Ver testimonio de ${t.cliente}`}
+                >
+                  <img src={t.portada} alt={`Testimonio de ${t.cliente}`} />
+                  <div className="tcar-overlay">
+                    <div className="tcar-play-btn">
+                      <PlayIcon size={24} />
                     </div>
-                  </button>
-                )}
-              </div>
-              <div className="tcar-info">
-                <p className="tcar-frase">{t.frase}</p>
-                <div className="tcar-meta">
-                  <span className="tcar-name">{t.cliente}</span>
-                </div>
-              </div>
+                    <div className="tcar-caption">
+                      <span className="tcar-caption-name">{t.cliente}</span>
+                      <p className="tcar-caption-frase">{t.frase}</p>
+                    </div>
+                  </div>
+                </button>
+              )}
             </div>
-          ))}
-        </div>
-
+          </div>
+        ))}
       </div>
     </section>
   )
