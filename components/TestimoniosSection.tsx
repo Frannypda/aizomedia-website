@@ -8,8 +8,7 @@ const testimonios = [
     portada: '/Brand/assets/Testimonios videos/Testimonio Dzzero/portada.png',
     cliente: 'Dzzero',
     frase: '"Al principio me pareció que era dinero. Al día de hoy me parece barato. Hemos multiplicado la facturación por 20 en solo 2 meses."',
-    featured: false,
-    star: false,
+    star: true,
   },
   {
     id: 'alfredo',
@@ -17,7 +16,6 @@ const testimonios = [
     portada: `https://img.youtube.com/vi/gTNbjriqoaU/hqdefault.jpg`,
     cliente: 'Alfredo M.',
     frase: '"Nunca os van a defraudar. Día a día he crecido a su lado una verdadera barbaridad."',
-    featured: false,
     star: false,
   },
   {
@@ -26,8 +24,7 @@ const testimonios = [
     portada: `https://img.youtube.com/vi/JQVfjavjPGg/hqdefault.jpg`,
     cliente: 'Oscar C.',
     frase: '"Los resultados son tangibles. Son gente muy proactiva, con lo cual es fácil ir creciendo."',
-    featured: true,
-    star: true,
+    star: false,
   },
   {
     id: 'javier',
@@ -35,7 +32,6 @@ const testimonios = [
     portada: `https://img.youtube.com/vi/bqvw0jCbULg/hqdefault.jpg`,
     cliente: 'Javier C.',
     frase: '"Gracias a ellos hemos conseguido vídeos virales. Más clientes y más gente que confía en nosotros."',
-    featured: false,
     star: false,
   },
 ]
@@ -87,11 +83,6 @@ export default function TestimoniosSection() {
                 )}
               </div>
               <div className="tcar-info">
-                {t.star && (
-                  <span className="tag tag-w" style={{ fontSize: '10px', marginBottom: '10px' }}>
-                    Destacado
-                  </span>
-                )}
                 <p className="tcar-frase">{t.frase}</p>
                 <div className="tcar-meta">
                   <span className="tcar-name">{t.cliente}</span>

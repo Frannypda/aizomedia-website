@@ -320,9 +320,9 @@ nav.nav-hidden{transform:translateY(-100%)}
 /* mobile carousel */
 .test-carousel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:14px;padding:4px 0 24px;max-width:900px;margin:0 auto}
 .test-carousel::-webkit-scrollbar{display:none}
-.tcar-card{flex:0 0 200px;scroll-snap-align:start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:18px;overflow:hidden;transition:border-color .2s,transform .25s var(--ease)}
-.tcar-card:hover{border-color:rgba(255,255,255,.2);transform:translateY(-4px)}
-.tcar-star{flex:0 0 240px;border-color:rgba(255,255,255,.22)}
+.tcar-card{flex:0 0 200px;scroll-snap-align:start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;transition:border-color .2s,transform .25s var(--ease),opacity .2s;opacity:.75}
+.tcar-card:hover{border-color:rgba(255,255,255,.2);transform:translateY(-4px);opacity:1}
+.tcar-star{flex:0 0 230px;border-color:rgba(62,125,94,.7);box-shadow:0 0 0 1px rgba(62,125,94,.4),0 16px 48px rgba(62,125,94,.2);opacity:1}
 .tcar-video{aspect-ratio:9/16;overflow:hidden;position:relative;background:#000}
 .tcar-thumb{display:block;width:100%;height:100%;border:none;padding:0;cursor:pointer;position:relative;background:#000}
 .tcar-thumb img{width:100%;height:100%;object-fit:cover;display:block}
