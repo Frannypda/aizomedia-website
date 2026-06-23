@@ -318,12 +318,12 @@ nav.nav-hidden{transform:translateY(-100%)}
 .test-feat-name{font-size:13px;font-weight:600;color:rgba(255,255,255,.45);font-family:var(--font-inter),sans-serif}
 
 /* mobile carousel */
-.test-carousel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:14px;padding:4px 0 24px;max-width:900px;margin:0 auto}
+.test-carousel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:14px;padding:4px 0 28px;max-width:900px;margin:0 auto}
 .test-carousel::-webkit-scrollbar{display:none}
-.tcar-card{flex:0 0 200px;scroll-snap-align:start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;transition:border-color .2s,transform .25s var(--ease),opacity .2s;opacity:.75}
+.tcar-card{flex:0 0 400px;scroll-snap-align:start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;transition:border-color .2s,transform .25s var(--ease),opacity .2s;opacity:.72}
 .tcar-card:hover{border-color:rgba(255,255,255,.2);transform:translateY(-4px);opacity:1}
-.tcar-star{flex:0 0 230px;border-color:rgba(62,125,94,.7);box-shadow:0 0 0 1px rgba(62,125,94,.4),0 16px 48px rgba(62,125,94,.2);opacity:1}
-.tcar-video{aspect-ratio:9/16;overflow:hidden;position:relative;background:#000}
+.tcar-star{border-color:rgba(62,125,94,.7);box-shadow:0 0 0 1px rgba(62,125,94,.4),0 16px 48px rgba(62,125,94,.2);opacity:1}
+.tcar-video{height:500px;overflow:hidden;position:relative;background:#000}
 .tcar-thumb{display:block;width:100%;height:100%;border:none;padding:0;cursor:pointer;position:relative;background:#000}
 .tcar-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .tcar-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center}
@@ -592,7 +592,8 @@ nav.nav-hidden{transform:translateY(-100%)}
   .why-grid,.case-cards-grid{grid-template-columns:1fr}
   .test-carousel{padding:4px 24px 20px;margin:0 -24px;max-width:none}
   .tcar-card{flex:0 0 78vw;max-width:300px}
-  .tcar-star{flex:0 0 82vw;max-width:320px}
+  .tcar-star{flex:0 0 78vw;max-width:300px}
+  .tcar-video{height:unset;aspect-ratio:9/16}
 }
 @keyframes srvCardIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
 
