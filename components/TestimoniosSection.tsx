@@ -113,11 +113,10 @@ export default function TestimoniosSection() {
                   <img src={t.portada} alt={`Testimonio de ${t.cliente}`} />
                   <div className="tcar-overlay">
                     <div className="tcar-play-btn">
-                      <PlayIcon size={24} />
+                      <PlayIcon size={22} />
                     </div>
                     <div className="tcar-caption">
                       <span className="tcar-caption-name">{t.cliente}</span>
-                      <p className="tcar-caption-frase">{t.frase}</p>
                     </div>
                   </div>
                 </button>

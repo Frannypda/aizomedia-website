@@ -287,18 +287,17 @@ nav.nav-hidden{transform:translateY(-100%)}
 .test-carousel{display:flex;overflow-x:auto;gap:14px;padding:8px 0 32px 64px;cursor:grab;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 88%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 88%,transparent 100%)}
 .test-carousel::-webkit-scrollbar{display:none}
 .test-carousel[data-dragging]{cursor:grabbing;scroll-snap-type:none}
-.tcar-card{flex:0 0 260px;scroll-snap-align:start;border-radius:14px;overflow:hidden;position:relative;transition:transform .25s var(--ease),opacity .2s;opacity:.6;flex-shrink:0}
-.tcar-card:hover{transform:scale(1.02);opacity:.9}
+.tcar-card{flex:0 0 360px;scroll-snap-align:start;border-radius:16px;overflow:hidden;position:relative;transition:transform .25s var(--ease),opacity .2s;opacity:.55;flex-shrink:0}
+.tcar-card:hover{transform:scale(1.015);opacity:.88}
 .tcar-star{opacity:1;box-shadow:0 0 0 2px rgba(62,125,94,.75),0 16px 48px rgba(62,125,94,.25)}
-.tcar-video{height:380px;overflow:hidden;position:relative;background:#000}
+.tcar-video{height:460px;overflow:hidden;position:relative;background:#000}
 .tcar-thumb{display:block;width:100%;height:100%;border:none;padding:0;cursor:pointer;position:relative;background:#000}
 .tcar-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .tcar-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;pointer-events:none}
 .tcar-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:background .2s,transform .2s var(--ease)}
 .tcar-card:hover .tcar-play-btn{background:var(--g);transform:translate(-50%,-50%) scale(1.08)}
-.tcar-caption{width:100%;padding:48px 14px 16px;background:linear-gradient(transparent,rgba(0,0,0,.82))}
-.tcar-caption-name{font-size:11px;font-weight:700;color:rgba(255,255,255,.9);font-family:var(--font-inter),sans-serif;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:5px}
-.tcar-caption-frase{font-size:12px;color:rgba(255,255,255,.65);line-height:1.6;font-style:italic;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tcar-caption{width:100%;padding:48px 16px 18px;background:linear-gradient(transparent,rgba(0,0,0,.78))}
+.tcar-caption-name{font-size:12px;font-weight:600;color:rgba(255,255,255,.85);font-family:var(--font-inter),sans-serif;letter-spacing:.07em;text-transform:uppercase;display:block}
 .test-drag-hint{text-align:center;margin-top:20px;font-size:12px;color:rgba(255,255,255,.28);letter-spacing:.1em;text-transform:uppercase;position:relative;z-index:1}
 .test-drag-hint span{margin:0 6px}
 
