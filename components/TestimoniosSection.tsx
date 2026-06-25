@@ -34,6 +34,14 @@ const testimonios = [
     frase: '"Gracias a ellos hemos conseguido vídeos virales. Más clientes y más gente que confía en nosotros."',
     star: false,
   },
+  {
+    id: 'marisa',
+    youtubeId: 'e2OX1QbybFM',
+    portada: 'https://img.youtube.com/vi/e2OX1QbybFM/hqdefault.jpg',
+    cliente: 'Marisa F.',
+    frase: '',
+    star: false,
+  },
 ]
 
 function PlayIcon({ size = 20 }: { size?: number }) {
