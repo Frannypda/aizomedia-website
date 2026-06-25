@@ -285,13 +285,12 @@ nav.nav-hidden{transform:translateY(-100%)}
 .test-head h2{font-size:clamp(28px,3.5vw,48px);color:#fff;margin-bottom:14px}
 .test-head p{font-size:17px;color:rgba(255,255,255,.45);max-width:420px;margin:0 auto;line-height:1.7}
 .test-carousel-wrap{position:relative;max-width:900px;margin:0 auto;overflow:hidden}
-.test-carousel-wrap::before,.test-carousel-wrap::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:4;pointer-events:none}
-.test-carousel-wrap::before{left:0;background:linear-gradient(to right,var(--n) 20%,transparent)}
-.test-carousel-wrap::after{right:0;background:linear-gradient(to left,var(--n) 20%,transparent)}
+.test-carousel-wrap::after{content:'';position:absolute;top:0;bottom:0;right:0;width:110px;z-index:4;pointer-events:none;background:linear-gradient(to left,var(--n) 15%,transparent)}
 .test-carousel{display:flex;overflow-x:auto;gap:14px;padding:8px 8px 24px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .test-carousel::-webkit-scrollbar{display:none}
 .tcar-card{flex:0 0 320px;scroll-snap-align:start;border-radius:16px;overflow:hidden;position:relative;transition:transform .25s var(--ease),opacity .2s;opacity:.5;flex-shrink:0}
 .tcar-card:hover{transform:scale(1.012);opacity:.85}
+.tcar-playing{transform:scale(1.06)!important;opacity:1!important;z-index:3;box-shadow:0 24px 64px rgba(0,0,0,.55)}
 .tcar-star{opacity:1;box-shadow:0 0 0 2px rgba(62,125,94,.75),0 16px 48px rgba(62,125,94,.22)}
 .tcar-video{aspect-ratio:9/16;position:relative;background:#000;overflow:hidden}
 .tcar-thumb{display:block;width:100%;height:100%;border:none;padding:0;cursor:pointer;position:relative;background:#000}

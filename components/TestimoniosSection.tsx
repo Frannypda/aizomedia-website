@@ -103,7 +103,7 @@ export default function TestimoniosSection() {
             onMouseLeave={stopDrag}
           >
             {testimonios.map((t) => (
-              <div key={t.id} className={`tcar-card${t.star ? ' tcar-star' : ''}`}>
+              <div key={t.id} className={`tcar-card${t.star ? ' tcar-star' : ''}${playing[t.id] ? ' tcar-playing' : ''}`}>
                 <div className="tcar-video">
                   {playing[t.id] ? (
                     <iframe
