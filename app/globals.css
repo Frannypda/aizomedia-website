@@ -281,25 +281,30 @@ nav.nav-hidden{transform:translateY(-100%)}
 /* ── TESTIMONIOS ── */
 .sec-test{padding:72px 0 80px;background:var(--n);position:relative;overflow:hidden}
 .sec-test::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
-.test-head{text-align:center;margin-bottom:52px;position:relative;z-index:1}
+.test-head{text-align:center;margin-bottom:48px;position:relative;z-index:1}
 .test-head h2{font-size:clamp(28px,3.5vw,48px);color:#fff;margin-bottom:14px}
 .test-head p{font-size:17px;color:rgba(255,255,255,.45);max-width:420px;margin:0 auto;line-height:1.7}
-.test-carousel{display:flex;overflow-x:auto;gap:14px;padding:8px 0 32px 64px;cursor:grab;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 88%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 88%,transparent 100%)}
+.test-carousel-wrap{position:relative;max-width:900px;margin:0 auto;overflow:hidden}
+.test-carousel-wrap::before,.test-carousel-wrap::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:4;pointer-events:none}
+.test-carousel-wrap::before{left:0;background:linear-gradient(to right,var(--n) 20%,transparent)}
+.test-carousel-wrap::after{right:0;background:linear-gradient(to left,var(--n) 20%,transparent)}
+.test-carousel{display:flex;overflow-x:auto;gap:14px;padding:8px 8px 24px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .test-carousel::-webkit-scrollbar{display:none}
-.test-carousel[data-dragging]{cursor:grabbing;scroll-snap-type:none}
-.tcar-card{flex:0 0 360px;scroll-snap-align:start;border-radius:16px;overflow:hidden;position:relative;transition:transform .25s var(--ease),opacity .2s;opacity:.55;flex-shrink:0}
-.tcar-card:hover{transform:scale(1.015);opacity:.88}
-.tcar-star{opacity:1;box-shadow:0 0 0 2px rgba(62,125,94,.75),0 16px 48px rgba(62,125,94,.25)}
-.tcar-video{height:460px;overflow:hidden;position:relative;background:#000}
+.tcar-card{flex:0 0 320px;scroll-snap-align:start;border-radius:16px;overflow:hidden;position:relative;transition:transform .25s var(--ease),opacity .2s;opacity:.5;flex-shrink:0}
+.tcar-card:hover{transform:scale(1.012);opacity:.85}
+.tcar-star{opacity:1;box-shadow:0 0 0 2px rgba(62,125,94,.75),0 16px 48px rgba(62,125,94,.22)}
+.tcar-video{aspect-ratio:9/16;position:relative;background:#000;overflow:hidden}
 .tcar-thumb{display:block;width:100%;height:100%;border:none;padding:0;cursor:pointer;position:relative;background:#000}
 .tcar-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .tcar-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;pointer-events:none}
-.tcar-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:background .2s,transform .2s var(--ease)}
-.tcar-card:hover .tcar-play-btn{background:var(--g);transform:translate(-50%,-50%) scale(1.08)}
-.tcar-caption{width:100%;padding:48px 16px 18px;background:linear-gradient(transparent,rgba(0,0,0,.78))}
-.tcar-caption-name{font-size:12px;font-weight:600;color:rgba(255,255,255,.85);font-family:var(--font-inter),sans-serif;letter-spacing:.07em;text-transform:uppercase;display:block}
-.test-drag-hint{text-align:center;margin-top:20px;font-size:12px;color:rgba(255,255,255,.28);letter-spacing:.1em;text-transform:uppercase;position:relative;z-index:1}
-.test-drag-hint span{margin:0 6px}
+.tcar-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.52);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:background .2s,transform .2s var(--ease)}
+.tcar-card:hover .tcar-play-btn{background:var(--g);transform:translate(-50%,-50%) scale(1.1)}
+.tcar-caption{width:100%;padding:48px 16px 18px;background:linear-gradient(transparent,rgba(0,0,0,.8))}
+.tcar-caption-name{font-size:12px;font-weight:600;color:rgba(255,255,255,.85);font-family:var(--font-inter),sans-serif;letter-spacing:.08em;text-transform:uppercase;display:block}
+.tcar-arrow{position:absolute;top:42%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);color:#fff;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s var(--ease);padding:0}
+.tcar-arrow:hover{background:rgba(255,255,255,.2);transform:translateY(-50%) scale(1.08)}
+.tcar-arrow-prev{left:12px}
+.tcar-arrow-next{right:12px}
 
 /* legacy dash/case styles kept for reference */
 .sec-dash{padding:120px 0;background:var(--n);position:relative;overflow:hidden}
@@ -559,12 +564,13 @@ nav.nav-hidden{transform:translateY(-100%)}
   .stat-item:nth-child(2){border-right:none}
   .stat-item:nth-child(1),.stat-item:nth-child(2){border-bottom:1px solid rgba(255,255,255,.09)}
   .why-grid,.case-cards-grid{grid-template-columns:1fr}
-  .test-carousel{padding:4px 24px 20px;margin:0 -24px;max-width:none}
-  .test-carousel{padding:8px 20px 28px;gap:12px;-webkit-mask-image:none;mask-image:none;cursor:default}
-  .tcar-card{flex:0 0 80vw;max-width:320px;opacity:1}
+  .test-carousel-wrap{overflow:visible}
+  .test-carousel-wrap::before,.test-carousel-wrap::after{display:none}
+  .test-carousel{padding:8px 20px 24px;gap:12px;margin:0 -20px;max-width:none}
+  .tcar-card{flex:0 0 78vw;max-width:300px;opacity:1}
   .tcar-card:hover{opacity:1;transform:none}
-  .tcar-star{flex:0 0 80vw;max-width:320px}
-  .test-drag-hint{display:none}
+  .tcar-star{flex:0 0 78vw;max-width:300px}
+  .tcar-arrow{display:none}
 }
 @keyframes srvCardIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
 

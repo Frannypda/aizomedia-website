@@ -7,7 +7,6 @@ const testimonios = [
     youtubeId: 'YD8XVKIDe90',
     portada: '/Brand/assets/Testimonios videos/Testimonio Dzzero/portada.png',
     cliente: 'Dzzero',
-    frase: '"Al principio me pareció que era dinero. Al día de hoy me parece barato. ×20 en 2 meses."',
     star: true,
   },
   {
@@ -15,7 +14,6 @@ const testimonios = [
     youtubeId: 'gTNbjriqoaU',
     portada: '/Brand/assets/Testimonios videos/Testimonio Alfaroteca con portada/Testimonio Alfaroteca con portada-Cover.jpg',
     cliente: 'Alfredo M.',
-    frase: '"Nunca os van a defraudar. Día a día he crecido a su lado una verdadera barbaridad."',
     star: false,
   },
   {
@@ -23,7 +21,6 @@ const testimonios = [
     youtubeId: 'JQVfjavjPGg',
     portada: '/Brand/assets/Testimonios videos/Testimonio Atlas Vital/Testimonio Atlas Vital(1)/Testimonio Atlas Vital(1)-Cover.jpg',
     cliente: 'Oscar C.',
-    frase: '"Los resultados son tangibles. Son gente muy proactiva, con lo cual es fácil ir creciendo."',
     star: false,
   },
   {
@@ -31,18 +28,12 @@ const testimonios = [
     youtubeId: 'bqvw0jCbULg',
     portada: '/Brand/assets/Testimonios videos/Testimonio Epicars con portada/Testimonio Epicars con portada-Cover.jpg',
     cliente: 'Javier C.',
-    frase: '"Gracias a ellos hemos conseguido vídeos virales. Más clientes y más gente que confía en nosotros."',
-    star: false,
-  },
-  {
-    id: 'marisa',
-    youtubeId: 'e2OX1QbybFM',
-    portada: 'https://img.youtube.com/vi/e2OX1QbybFM/hqdefault.jpg',
-    cliente: 'Marisa F.',
-    frase: '',
     star: false,
   },
 ]
+
+const CARD_W = 320
+const GAP = 14
 
 function PlayIcon({ size = 20 }: { size?: number }) {
   return (
@@ -50,6 +41,13 @@ function PlayIcon({ size = 20 }: { size?: number }) {
       <path d="M8 5v14l11-7z" />
     </svg>
   )
+}
+
+function ChevronLeft() {
+  return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+}
+function ChevronRight() {
+  return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><polyline points="9 18 15 12 9 6"/></svg>
 }
 
 export default function TestimoniosSection() {
@@ -83,6 +81,9 @@ export default function TestimoniosSection() {
     setPlaying(prev => ({ ...prev, [id]: true }))
   }
 
+  const scrollPrev = () => trackRef.current?.scrollBy({ left: -(CARD_W + GAP), behavior: 'smooth' })
+  const scrollNext = () => trackRef.current?.scrollBy({ left: CARD_W + GAP, behavior: 'smooth' })
+
   return (
     <section className="sec-test" id="resultados">
       <div className="w">
@@ -91,53 +92,56 @@ export default function TestimoniosSection() {
           <h2>Lo que dicen los que ya lo han probado.</h2>
           <p>Founders de ecommerce que pasaron por el Sprint.</p>
         </div>
-      </div>
 
-      <div
-        className="test-carousel"
-        ref={trackRef}
-        onMouseDown={onMouseDown}
-        onMouseMove={onMouseMove}
-        onMouseUp={stopDrag}
-        onMouseLeave={stopDrag}
-      >
-        {testimonios.map((t) => (
-          <div key={t.id} className={`tcar-card${t.star ? ' tcar-star' : ''}`}>
-            <div className="tcar-video">
-              {playing[t.id] ? (
-                <iframe
-                  src={`https://www.youtube.com/embed/${t.youtubeId}?autoplay=1`}
-                  title={`Testimonio de ${t.cliente}`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  style={{ width: '100%', height: '100%', border: 'none', position: 'absolute', inset: 0 }}
-                />
-              ) : (
-                <button
-                  className="tcar-thumb"
-                  onClick={() => play(t.id)}
-                  aria-label={`Ver testimonio de ${t.cliente}`}
-                >
-                  <img src={t.portada} alt={`Testimonio de ${t.cliente}`} />
-                  <div className="tcar-overlay">
-                    <div className="tcar-play-btn">
-                      <PlayIcon size={22} />
-                    </div>
-                    <div className="tcar-caption">
-                      <span className="tcar-caption-name">{t.cliente}</span>
-                    </div>
-                  </div>
-                </button>
-              )}
-            </div>
+        <div className="test-carousel-wrap">
+          <div
+            className="test-carousel"
+            ref={trackRef}
+            onMouseDown={onMouseDown}
+            onMouseMove={onMouseMove}
+            onMouseUp={stopDrag}
+            onMouseLeave={stopDrag}
+          >
+            {testimonios.map((t) => (
+              <div key={t.id} className={`tcar-card${t.star ? ' tcar-star' : ''}`}>
+                <div className="tcar-video">
+                  {playing[t.id] ? (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${t.youtubeId}?autoplay=1`}
+                      title={`Testimonio de ${t.cliente}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      style={{ width: '100%', height: '100%', border: 'none', position: 'absolute', inset: 0 }}
+                    />
+                  ) : (
+                    <button
+                      className="tcar-thumb"
+                      onClick={() => play(t.id)}
+                      aria-label={`Ver testimonio de ${t.cliente}`}
+                    >
+                      <img src={t.portada} alt={`Testimonio de ${t.cliente}`} />
+                      <div className="tcar-overlay">
+                        <div className="tcar-play-btn">
+                          <PlayIcon size={22} />
+                        </div>
+                        <div className="tcar-caption">
+                          <span className="tcar-caption-name">{t.cliente}</span>
+                        </div>
+                      </div>
+                    </button>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
 
-      <div className="w">
-        <p className="test-drag-hint">
-          <span>←</span> arrastra para ver más <span>→</span>
-        </p>
+          <button className="tcar-arrow tcar-arrow-prev" onClick={scrollPrev} aria-label="Anterior">
+            <ChevronLeft />
+          </button>
+          <button className="tcar-arrow tcar-arrow-next" onClick={scrollNext} aria-label="Siguiente">
+            <ChevronRight />
+          </button>
+        </div>
       </div>
     </section>
   )
