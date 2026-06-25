@@ -126,6 +126,12 @@ export default function TestimoniosSection() {
           </div>
         ))}
       </div>
+
+      <div className="w">
+        <p className="test-drag-hint">
+          <span>←</span> arrastra para ver más <span>→</span>
+        </p>
+      </div>
     </section>
   )
 }
