@@ -13,7 +13,7 @@ const testimonios = [
   {
     id: 'alfredo',
     youtubeId: 'gTNbjriqoaU',
-    portada: `https://img.youtube.com/vi/gTNbjriqoaU/hqdefault.jpg`,
+    portada: '/Brand/assets/Testimonios videos/Testimonio Alfaroteca con portada/Testimonio Alfaroteca con portada-Cover.jpg',
     cliente: 'Alfredo M.',
     frase: '"Nunca os van a defraudar. Día a día he crecido a su lado una verdadera barbaridad."',
     star: false,
@@ -21,7 +21,7 @@ const testimonios = [
   {
     id: 'oscar',
     youtubeId: 'JQVfjavjPGg',
-    portada: `https://img.youtube.com/vi/JQVfjavjPGg/hqdefault.jpg`,
+    portada: '/Brand/assets/Testimonios videos/Testimonio Atlas Vital/Testimonio Atlas Vital(1)/Testimonio Atlas Vital(1)-Cover.jpg',
     cliente: 'Oscar C.',
     frase: '"Los resultados son tangibles. Son gente muy proactiva, con lo cual es fácil ir creciendo."',
     star: false,
@@ -29,7 +29,7 @@ const testimonios = [
   {
     id: 'javier',
     youtubeId: 'bqvw0jCbULg',
-    portada: `https://img.youtube.com/vi/bqvw0jCbULg/hqdefault.jpg`,
+    portada: '/Brand/assets/Testimonios videos/Testimonio Epicars con portada/Testimonio Epicars con portada-Cover.jpg',
     cliente: 'Javier C.',
     frase: '"Gracias a ellos hemos conseguido vídeos virales. Más clientes y más gente que confía en nosotros."',
     star: false,
